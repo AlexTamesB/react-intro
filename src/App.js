@@ -19,7 +19,16 @@ function App() {
 
 const logotipo = logo;
 const nombre = "Hello World";
-  return (
+const mostrarImagen = true;
+//Si el contadror es menor a 5, imprimirun mensale que diga,
+//"El contador es mayor a 5"
+//si el contadro es mayor a 5, imprimir un mensaje que diga
+//" el conmtador es mayor a 5"
+
+const contador = 5;
+
+
+  return ( 
 
     <div className="App">
       <header className="App-header">
@@ -37,6 +46,10 @@ const nombre = "Hello World";
         </a>
       </header> 
       <HelloWorld />
+
+      <div>{mostrarImagen? <img src={logotipo} className="App-logo" alt="logo" /> : 'No hay imagen para mostra'}
+      
+      </div>
     </div>
   );
   
