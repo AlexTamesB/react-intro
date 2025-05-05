@@ -48,7 +48,7 @@ function App() {
         </header>
 
         <div>
-          {/* código react */}
+          
           {mostrarImagen ? (
             <img src={logotipo} className="App-logo" alt="logo" />
           ) : (
@@ -57,7 +57,7 @@ function App() {
         </div>
 
         <div>
-          {/* Condicional del contador */}
+        
           {contador < 5
             ? 'El contador es menor a 5'
             : 'El contador es mayor a 5'}
