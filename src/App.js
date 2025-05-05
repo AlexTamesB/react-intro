@@ -25,13 +25,13 @@ const mostrarImagen = true;
 //si el contadro es mayor a 5, imprimir un mensaje que diga
 //" el conmtador es mayor a 5"
 
-const contador = 5;
-
+ const contador = 5;
 
   return ( 
 
     <div className="App">
       <header className="App-header">
+        {mostrarImagen && <span>Hola</span>}
         <img src={logotipo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -45,6 +45,16 @@ const contador = 5;
           Learn React
         </a>
       </header> 
+      <div>
+        {/* codigo react */}
+      {strarImagen ?<img src={logotipo} className="app-logo" alt"logo" />
+      :'No hay imagen para mostrar'}
+      
+      
+      </div>
+      
+
+
       <HelloWorld />
 
       <div>{mostrarImagen? <img src={logotipo} className="App-logo" alt="logo" /> : 'No hay imagen para mostra'}
