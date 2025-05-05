@@ -25,7 +25,7 @@ const mostrarImagen = true;
 //si el contadro es mayor a 5, imprimir un mensaje que diga
 //" el conmtador es mayor a 5"
 
- const contador = 5;
+
 
   return ( 
 
@@ -47,7 +47,7 @@ const mostrarImagen = true;
       </header> 
       <div>
         {/* codigo react */}
-      {strarImagen ?<img src={logotipo} className="app-logo" alt"logo" />
+      {mostrarImagen ?<img src={logotipo} className="app-logo" alt="logo" />
       :'No hay imagen para mostrar'}
       
       
