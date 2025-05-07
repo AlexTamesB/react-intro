@@ -40,14 +40,21 @@ function App() {
       </div>
     );
   });
-
+  
+  
+  //mostrar todos los elementos de; menu
+  //agregar id, poner el link como href
+  //si esta selecionado, poner un *
+  
   const menu = opcionesMenu.map(elemento => {
     return (
-      <>
+      <p>
         {elemento.texto}
-      </>
+{ elemento.isSelected ? (<b>*</b>):''}
+      </p>
     );
   });
+
 
   const logotipo = logo;
   const mostrarImagen = true;
