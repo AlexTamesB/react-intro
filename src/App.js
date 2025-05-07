@@ -11,27 +11,49 @@ function HelloWorld() {
   return (
     <div className="app app-header">
       <div>
-  <h1>Hola Alex Tames</h1>
-</div>
+        <h1>Hola Alex Tames</h1>
+      </div>
     </div>
   );
 }
-
-const entrada = ['a', 'b', 'c']
-
 const menuGithub = [];
 
-const opcionesMenu = [{
+const entrada = ['a', 'b', 'c'];
 
-  id: 1, texto: 'Inicio', link: '/', isSelected: true
-}, {
-  id: 2, texto: 'Tssuess', link: '/productos', isSelected: false
-}, {
+const opcionesMenu = [{
+  id: 1, texto: 'Inicio', link: '/', isSelected: false
+},
+{
+  id: 2, texto: 'Tssuess', link: '/productos', isSelected: true
+},
+{
   id: 3, texto: 'Pull-recuests', link: '/Pulls', isSelected: false
 }];
 
 
 function App() {
+
+  const actualizarSeleccion = (id = null) =>
+    {console.log('click en el elemento', id);
+   };
+
+  //mostrar todos los elementos de; menu
+  //agregar id, poner el link como href
+  //si esta selecionado, poner un *
+
+  const menu = opcionesMenu.map(elemento => {
+    return (
+      <a
+      href={`#${elemento.link}`}
+      key={elemento.id} 
+      style={{margin: '10px' }} 
+      onClick={actualizarSeleccion.bind(this, elemento.id)}>
+        { elemento.texto }
+        { elemento.isSelected && (<b>*</b>)  }
+      </a>
+    );
+  });
+
 
   const parrafos = entrada.map(elemento => {
     return (
@@ -40,31 +62,17 @@ function App() {
       </div>
     );
   });
-  
-  
-  //mostrar todos los elementos de; menu
-  //agregar id, poner el link como href
-  //si esta selecionado, poner un *
-  
-  const menu = opcionesMenu.map(elemento => {
-    return (
-      <p>
-        {elemento.texto}
-{ elemento.isSelected ? (<b>*</b>):''}
-      </p>
-    );
-  });
 
 
   const logotipo = logo;
   const mostrarImagen = true;
 
-  
+
   // Si el contador es menor a 5, imprimir un mensaje:
   // "El contador es menor a 5"
   // Si el contador es mayor a 5, imprimir:
   // "El contador es mayor a 5"
-  const contador = 4; 
+  const contador = 4;
 
 
   return (
@@ -100,13 +108,13 @@ function App() {
           {contador < 5
             ? 'El contador es menor a 5' : 'El contador es mayor a 5'}
         </div>
-<h2>
-  Estos son los elementos</h2>
-{parrafos}
+        <h2>
+          Estos son los elementos</h2>
+        {parrafos}
 
         <h1>Estos son los elementos del menu</h1>
         {menu}
-      </div>
+      </div> 
     </>
   );
 }
