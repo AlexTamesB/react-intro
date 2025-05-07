@@ -10,24 +10,55 @@ function HelloWorld() {
   const nombre = 'Alexander Tames';
   return (
     <div className="app app-header">
-      <p>
-        Hello {nombre}
-      </p>
+      <div>
+  <h1>Hola Alex Tames</h1>
+</div>
     </div>
   );
 }
 
+const entrada = ['a', 'b', 'c']
+
+const menuGithub = [];
+
+const opcionesMenu = [{
+
+  id: 1, texto: 'Inicio', link: '/', isSelected: true
+}, {
+  id: 2, texto: 'Tssuess', link: '/productos', isSelected: false
+}, {
+  id: 3, texto: 'Pull-recuests', link: '/Pulls', isSelected: false
+}];
 
 
 function App() {
+
+  const parrafos = entrada.map(elemento => {
+    return (
+      <div>
+        <p>{elemento}</p>
+      </div>
+    );
+  });
+
+  const menu = opcionesMenu.map(elemento => {
+    return (
+      <>
+        {elemento.texto}
+      </>
+    );
+  });
+
   const logotipo = logo;
   const mostrarImagen = true;
-  const contador = 4;
 
+  
   // Si el contador es menor a 5, imprimir un mensaje:
   // "El contador es menor a 5"
   // Si el contador es mayor a 5, imprimir:
   // "El contador es mayor a 5"
+  const contador = 4; 
+
 
   return (
     <>
@@ -47,9 +78,9 @@ function App() {
             Learn React
           </a>
         </header>
-
+        <HelloWorld />
         <div>
-          
+
           {mostrarImagen ? (
             <img src={logotipo} className="App-logo" alt="logo" />
           ) : (
@@ -58,12 +89,16 @@ function App() {
         </div>
 
         <div>
-        
-          {contador < 5
-            ? 'El contador es menor a 5': 'El contador es mayor a 5'}
-        </div>
 
-        <HelloWorld />
+          {contador < 5
+            ? 'El contador es menor a 5' : 'El contador es mayor a 5'}
+        </div>
+<h2>
+  Estos son los elementos</h2>
+{parrafos}
+
+        <h1>Estos son los elementos del menu</h1>
+        {menu}
       </div>
     </>
   );
