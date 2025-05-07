@@ -18,10 +18,11 @@ function HelloWorld() {
 }
 
 
+
 function App() {
   const logotipo = logo;
   const mostrarImagen = true;
-  const contador = 10;
+  const contador = 4;
 
   // Si el contador es menor a 5, imprimir un mensaje:
   // "El contador es menor a 5"
@@ -59,8 +60,7 @@ function App() {
         <div>
         
           {contador < 5
-            ? 'El contador es menor a 5'
-            : 'El contador es mayor a 5'}
+            ? 'El contador es menor a 5': 'El contador es mayor a 5'}
         </div>
 
         <HelloWorld />
