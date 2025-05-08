@@ -33,13 +33,13 @@ const opcionesMenu = [{
 
 
 function App() {
-const [elementoActivo, setElementoActivo] = useState('hola')
+  const [elementoActivo, setElementoActivo] = useState('hola')
 
-  const actualizarSeleccion = (id = null) =>
-    {console.log('click en el elemento', id);
+  const actualizarSeleccion = (id = null) => {
+    console.log('click en el elemento', id);
 
-      setElementoActivo(id);
-   };
+    setElementoActivo(id);
+  };
 
   //mostrar todos los elementos de; menu
   //agregar id, poner el link como href
@@ -48,12 +48,12 @@ const [elementoActivo, setElementoActivo] = useState('hola')
   const menu = opcionesMenu.map(elemento => {
     return (
       <a
-      href={`#${elemento.link}`}
-      key={elemento.id} 
-      style={{margin: '10px' }} 
-      onClick={actualizarSeleccion.bind(this, elemento.id)}>
-        { elemento.texto }
-        { elemento.id === elementoActivo && (<b>*</b>)}
+        href={`#${elemento.link}`}
+        key={elemento.id}
+        style={{ margin: '10px' }}
+        onClick={actualizarSeleccion.bind(this, elemento.id)}>
+        {elemento.texto}
+        {elemento.id === elementoActivo && (<b>*</b>)}
       </a>
     );
   });
@@ -76,9 +76,17 @@ const [elementoActivo, setElementoActivo] = useState('hola')
   // "El contador es menor a 5"
   // Si el contador es mayor a 5, imprimir:
   // "El contador es mayor a 5"
-  const contador = 4;
+  const contador = 20;
 
+  const [contadorClics, setContadorClics] = useState(0);
 
+  const IncrementaContador = () => {
+    setContadorClics(contadorClics + 1);
+  };
+
+  const decrementarContador = () => {
+    setContadorClics(contadorClics - 1);
+  };
   return (
     <>
       <div className="App">
@@ -120,9 +128,15 @@ const [elementoActivo, setElementoActivo] = useState('hola')
 
         {menu}
 
-        <h1>Este es el elemento seleccionado</h1>
+        <h1>Este es   e       l elemento seleccionado</h1>
         {elementoActivo}
-      </div> 
+
+        <h1>Contador de clics:{contadorClics} </h1>
+        <button onClick={decrementarContador}>decrementar</button>  
+        <button onClick={IncrementaContador}>Incrementar</button>
+        
+ 
+    </div > 
     </>
   );
 }
