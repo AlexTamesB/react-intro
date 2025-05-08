@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 //#1 los componestes son funciones que retornan HTML
 //#2 receordar los parentesis  
 //#3 clases de css van con className
@@ -32,9 +33,12 @@ const opcionesMenu = [{
 
 
 function App() {
+const [elementoActivo, setElementoActivo] = useState('hola')
 
   const actualizarSeleccion = (id = null) =>
     {console.log('click en el elemento', id);
+
+      setElementoActivo(id);
    };
 
   //mostrar todos los elementos de; menu
@@ -49,7 +53,7 @@ function App() {
       style={{margin: '10px' }} 
       onClick={actualizarSeleccion.bind(this, elemento.id)}>
         { elemento.texto }
-        { elemento.isSelected && (<b>*</b>)  }
+        { elemento.id === elementoActivo && (<b>*</b>)}
       </a>
     );
   });
@@ -113,7 +117,11 @@ function App() {
         {parrafos}
 
         <h1>Estos son los elementos del menu</h1>
+
         {menu}
+
+        <h1>Este es el elemento seleccionado</h1>
+        {elementoActivo}
       </div> 
     </>
   );
